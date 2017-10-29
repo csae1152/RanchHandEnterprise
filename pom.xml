@@ -11,13 +11,13 @@
     <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>  
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
   </properties>  
-  <dependencies>
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>7.0</version>
-      <type>jar</type>
-    </dependency>
+  <dependencies> 
+    <dependency> 
+      <groupId>javax</groupId>  
+      <artifactId>javaee-api</artifactId>  
+      <version>7.0</version>  
+      <type>jar</type> 
+    </dependency>  
     <dependency> 
       <groupId>javax</groupId>  
       <artifactId>javaee-web-api</artifactId>  
@@ -41,6 +41,20 @@
       <artifactId>neo4j-ogm-core</artifactId>  
       <version>3.0.0</version> 
     </dependency>  
+    <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core -->  
+    <dependency> 
+      <groupId>org.apache.shiro</groupId>  
+      <artifactId>shiro-core</artifactId>  
+      <version>1.4.0</version> 
+    </dependency>  
+      
+    <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-web -->
+<dependency>
+    <groupId>org.apache.shiro</groupId>
+    <artifactId>shiro-web</artifactId>
+    <version>1.4.0</version>
+</dependency>
+ 
     <!-- https://mvnrepository.com/artifact/org.neo4j/neo4j-ogm-http-driver -->  
     <dependency> 
       <groupId>org.neo4j</groupId>  
