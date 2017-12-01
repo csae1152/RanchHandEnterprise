@@ -9,10 +9,12 @@
 
   <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
+  <script src="https://unpkg.com/vue"></script>
+
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="web/js/jquery.min.js"></script>
   <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-  
+
   <!-- Include vue.js-->
   <script src="https://unpkg.com/vue"></script>
 
@@ -207,6 +209,10 @@
 <!---- //End-work---->
 <!----start-portfolio----->
 
+<div id="app">
+  {{ message }}
+</div>
+
 <div class="clearfix"> </div>
 <!----//End-portfolio----->
 <!----start-blog---->
@@ -235,6 +241,13 @@
         $().UItoTop({ easingType: 'easeOutQuart' });
 
       });
+
+      var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Helmut!'
+  }
+})
     </script>
     <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
   </div>
