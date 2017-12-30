@@ -7,6 +7,39 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="web/images/favicon.ico">
 
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:400,300,600' rel='stylesheet'
+        type='text/css'>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+$(document).ready(function() {
+    $("#loginLink").click(function( event ){
+           event.preventDefault();
+           $(".overlay").fadeToggle("fast");
+     });
+
+    $(".overlayLink").click(function(event){
+        event.preventDefault();
+        var action = $(this).attr('data-action');
+
+        $("#loginTarget").load("ajax/" + action);
+
+        $(".overlay").fadeToggle("fast");
+    });
+
+    $(".close").click(function(){
+        $(".overlay").fadeToggle("fast");
+    });
+
+    $(document).keyup(function(e) {
+        if(e.keyCode == 27 && $(".overlay").css("display") != "none" ) {
+            event.preventDefault();
+            $(".overlay").fadeToggle("fast");
+        }
+    });
+});
+
+  </script>
+
   <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
   <script src="https://unpkg.com/vue"></script>
@@ -209,10 +242,6 @@
 <!---- //End-work---->
 <!----start-portfolio----->
 
-<div id="app">
-  {{ message }}
-</div>
-
 <div class="clearfix"> </div>
 <!----//End-portfolio----->
 <!----start-blog---->
@@ -227,32 +256,20 @@
         <a data-pin-do="buttonFollow" href="https://de.pinterest.com/csae1152/mypredictivefarm/">Pinterest</a>
 
     </div>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        /*
-         var defaults = {
-         containerID: 'toTop', // fading element id
-         containerHoverID: 'toTopHover', // fading element hover id
-         scrollSpeed: 1200,
-         easingType: 'linear'
-         };
-         */
 
-        $().UItoTop({ easingType: 'easeOutQuart' });
-
-      });
-
-      var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello FarmHand!'
-  }
-})
-    </script>
     <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
   </div>
 </div>
 <!----//End-footer---->
 <!----//End-container---->
+<script>
+    $(document).ready(function() {
+        function disableBack() { window.history.forward() }
+
+        window.onload = disableBack();
+        window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+    });
+
+</script>
 </body>
 </html>
